@@ -1,0 +1,20 @@
+[project]
+name = "residuals"
+version = "0.1.0"
+description = ""
+authors = [
+    { name = "Kavi Bidlack", email = "ksbidlack@gmail.com" }
+]
+dependencies = [
+    "numpy>=1.26.4",
+    "pandas>=2.2.1",
+    "requests>=2.31.0",
+    "matplotlib>=3.8.3",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[tool.rye]
+managed = true
+virtual = true
+dev-dependencies = []
