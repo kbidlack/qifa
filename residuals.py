@@ -148,7 +148,7 @@ def find_residuals(stars: pd.DataFrame, iso: Isochrone):
     # plt.gca().invert_yaxis()
     # plt.show()
 
-    return residuals * normed_errors
+    return (residuals / np.max(residuals)) * normed_errors
 
 
 if __name__ == "__main__":
