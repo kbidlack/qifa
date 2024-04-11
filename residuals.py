@@ -153,16 +153,15 @@ def find_residuals(stars: pd.DataFrame, iso: Isochrone):
 
 if __name__ == "__main__":
     isochrone = Isochrone(
-        distance=0.98,
-        log_age=8.55,
-        metallicity=-0.05,
-        b_vreddening=0.28,
+        distance=1.04,
+        log_age=8.4,
+        metallicity=-0.15,
+        b_vreddening=0.33,
         blue_filter="BP",
         red_filter="RP",
         lum_filter="G",
     )
 
-    stars = pd.read_csv("n.csv")
-    # stars = pd.read_csv("a.csv")
+    stars = pd.read_csv("ngc1912.csv")
     residuals = find_residuals(stars, isochrone)
     print(np.mean(residuals))
