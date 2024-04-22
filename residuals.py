@@ -36,7 +36,7 @@ filter_wavelengths = {
 
 
 def calculate_lambda(A_v, R_v, filter_lambda=10**-6):
-    x = (filter_lambda / 1) ** -1
+    x = filter_lambda**-1
     y = x - 1.82
 
     if 0.3 < x < 1.1:
