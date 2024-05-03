@@ -133,7 +133,9 @@ def find_residuals(stars: pd.DataFrame, iso: Isochrone):
     filter_errors = stars[[iso.blue_error, iso.red_error, iso.lum_error]].values
     max_errors = np.max(filter_errors, axis=0)
     min_errors = np.min(filter_errors, axis=0)
-    normed_errors = 1 - np.average((filter_errors - min_errors) / max_errors, axis=1)
+    normed_errors = 1 - np.average(
+        (filter_errors - min_errors) / (max_errors - min_errors), axis=1
+    )
 
     b_r = np.array(stars[iso.blue_filter] - stars[iso.red_filter])
     lum = np.array(stars[iso.lum_filter])
